@@ -60,4 +60,4 @@ steps:
   image: nginx
   commands:
   - ls
-  - echo world3
+  - sleep 2s
