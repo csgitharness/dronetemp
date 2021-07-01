@@ -1,1 +1,63 @@
-test
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: greeting
+  image: alpine
+  commands:
+  - sleep 2s
+  - echo hello
+  - echo world2
+  
+- name: second_step
+  image: alpine
+  commands:
+  - echo hello2
+  - echo world2
+
+
+- name: third_step
+  image: alpine
+  commands:
+  - echo hello3
+  - echo world3
+  depends_on:
+  - greeting
+  - second_step
+  
+----
+  
+kind: pipeline
+type: docker
+name: default2
+
+steps:
+- name: pipeline2
+  image: alpine
+  commands:
+  - echo test
+  
+- name: another
+  image: alpine
+  commands:
+  - ls
+  - echo world3
+  
+----
+  
+kind: pipeline
+type: docker
+name: default3
+
+steps:
+- name: pipeline22
+  image: alpine
+  commands:
+  - echo test
+  
+- name: another2
+  image: nginx
+  commands:
+  - ls
+  - echo world3
