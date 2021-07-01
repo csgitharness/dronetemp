@@ -6,7 +6,7 @@ steps:
 - name: greeting
   image: alpine
   commands:
-  - sleep 2s
+  - sleep 3s
   - echo hello
   - echo world2
   
