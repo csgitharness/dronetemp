@@ -20,6 +20,7 @@ steps:
 - name: third_step
   image: alpine
   commands:
+  - sleep 5s
   - echo hello3
   - echo world3
   depends_on:
