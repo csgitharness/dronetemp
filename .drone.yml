@@ -15,14 +15,7 @@ steps:
   commands:
   - echo hello2
   - echo world2
-
-
-- name: third_step
-  image: alpine
-  commands:
-  - sleep 5s
-  - echo hello3
-  - echo world3
+  
   depends_on:
   - greeting
   - second_step
